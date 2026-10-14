@@ -2,7 +2,7 @@ name: Java Spring Boot CI (Gradle)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   test:
