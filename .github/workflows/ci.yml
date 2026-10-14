@@ -2,7 +2,7 @@ name: Java Spring Boot CI (Gradle)
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "main" ]
 
 jobs:
   test:
@@ -24,3 +24,13 @@ jobs:
 
       - name: Thực thi JUnit Test với Gradle
         run: ./gradlew test
+
+      - name: Đóng gói tệp JAR với Gradle
+        run: ./gradlew bootJar
+
+      - name: Lưu trữ thành phẩm JAR Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar
+          path: build/libs/*.jar
+
