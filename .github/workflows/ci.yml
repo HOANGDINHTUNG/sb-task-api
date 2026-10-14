@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout mã nguồn
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
-      - name: Thiết lập môi trường Java JDK 17
-        uses: actions/setup-java@v5
+      - name: Thiết lập môi trường Java JDK 21
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'temurin'
 
       - name: Cấp quyền cho Gradle Wrapper
@@ -24,4 +24,3 @@ jobs:
 
       - name: Thực thi JUnit Test với Gradle
         run: ./gradlew test
-
